@@ -32,11 +32,21 @@ public class Homepage {
 		
 	}
 	
+	public void homeOwnersSteps(String dropdown, String zipcode) {
+		selectDropdown(dropdownElement, dropdown);
+		input(zipcodeElement, zipcode);
+		click(startYourQuoteElement);
+		
+	}
+	
 	public void autoSteps(AutoData autoData) {
 		selectDropdown(dropdownElement, autoData.getAutoInsurane());
 		input(zipcodeElement, autoData.getZipCode());
 		click(startYourQuoteElement);
 		
 		}
+	
+	
+	
 
 }

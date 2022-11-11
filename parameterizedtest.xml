@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<parameter name="autoInsurance" value="personalAuto"></parameter>
+		<parameter name="zipCode" value="11372"></parameter>
+		<parameter name="firstName" value="Miz"></parameter>
+		<parameter name="middleInitial" value="M"></parameter>
+		<parameter name="lastName" value="Razor"></parameter>
+		<parameter name="suffix" value="6: c_IV"></parameter>
+		<classes>
+			<class name="auto.AutoTest">
+				<methods>
+					<include name="autoQuoteParameter"></include>
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -12,6 +12,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
@@ -48,9 +49,11 @@ public class BaseClass {
 		extent = ExtentManager.getInstance();
 	}
 	 
-
+    //@Parameters("browser")
 	@BeforeMethod
 	public void setUpDriver() {
+		//public void setUpDriver(String browser) {} Crossbrowser testing only!
+		//initDriver(browser); Crossbrowser testing only!
 		initDriver();
 		driver.manage().window().maximize();
 		driver.get(config.getProperty(URL));
@@ -85,7 +88,9 @@ public class BaseClass {
 	}
 	
 	private void initDriver() {
-	String browserName = config.getProperty(BROWSER);
+		//private void initDriver(String browser) {}  Crossbrowser testing only!
+		//switch (browser) Crossbrowser testing only!
+		String browserName = config.getProperty(BROWSER);
 	switch (browserName) {
 	case CHROME:
 		WebDriverManager.chromedriver().setup();

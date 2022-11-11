@@ -1,13 +1,12 @@
-package pages.Auto;
+package pages.homeowner;
+
+import static common.CommonActions.input;
+import static common.CommonActions.selectDropdown;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import utils.data.AutoData;
-
-import static common.CommonActions.*;
 
 public class AboutYou {
 	
@@ -27,6 +26,7 @@ public class AboutYou {
 	@FindBy(id = "nav-continue")
 	WebElement agreeElement;
 	
+	
 	public void aboutYouSteps(String firstName, String middleInitial, String lastName, String suffix) {
 		input(firstNamElement, firstName);
 		input(middleNamElement, middleInitial);
@@ -35,13 +35,5 @@ public class AboutYou {
 		//click(agreeElement);
 		
 	}
-	
-	public void aboutYouSteps(AutoData autoData) {
-		input(firstNamElement, autoData.getFirstName());
-		input(middleNamElement, autoData.getMiddleInitial());
-		input(lastNamElement, autoData.getLastName());
-		selectDropdown(suffixElement, autoData.getSuffixString());
-		//click(agreeElement);
-		
-	}
+
 }
